@@ -11,6 +11,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 
+// all above is header file which contain all the useful builtin function.
+
 speak = wincl.Dispatch('SAPI.SpVoice') # these are the voices which we are using
 # path = (r'F:\\All Python Codes With Django\\My_Project\\Dynamo_Magic\\change_name.txt')
 # file=open(path)
