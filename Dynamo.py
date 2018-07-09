@@ -366,7 +366,7 @@ elif('Train' in data or 'train' in data or 'train live status' in data):
     train_number=input('Please enter train number:-'+"")
     speak.speak("please enter a date")
     date=input("Please enter a date in this format please(dd-mm-yyyy):- "+"")
-    url="https://api.railwayapi.com/v2/live/train/"+train_number+"/date/"+date+"/apikey/hc33ocjyyf/"
+    url="https://api.railwayapi.com/v2/live/train/"+train_number+"/date/"+date+"/apikey/your api key/"
     status=requests.get(url).json()
     train_name=requests.get(url).json()
     desc=requests.get(url).json()
@@ -389,8 +389,8 @@ elif('send mails' in data or 'mail' in data or 'send' in data):
         speak.speak("Please tell me the input type")
         taking_input = input("enter the way that you want to send a mail by voice/type: ")
         if('type' in taking_input):
-            email_user = 'saurabhnemabhopal@outlook.com'
-            email_password = 'Funbase1#'
+            email_user = 'your email id'
+            email_password = 'your password'
             speak.speak("to whome you want to send")
             email_send = input("To whome you want to send: ")
 
@@ -427,8 +427,8 @@ elif('send mails' in data or 'mail' in data or 'send' in data):
             print("sucess")
 
     else:
-        email_user = 'sauravnemabhopal@gmail.com'
-        email_password = '9425666239'
+        email_user = 'your email id'
+        email_password = 'your password'
         speak.speak("to whome you want to send")
         send_user = input("please enter to whome you want to sent this mail: ")
         print(send_user)
