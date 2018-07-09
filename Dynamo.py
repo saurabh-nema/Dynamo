@@ -56,7 +56,7 @@ elif('nothing' in data):
     print("Ok! I'll do nothing")
 
 elif('change my name' in data or 'what is my name' in data or 'what you call me' in data):
-    path = (r'F:\\All Python Codes With Django\\My_Project\\Dynamo_Magic\\change_name.txt')
+    path = (r'your path')
     file=open(path)
     name=file.read()
     print(name)
@@ -71,7 +71,7 @@ elif('change my name' in data or 'what is my name' in data or 'what you call me'
             speak.speak('what you want me to call')
             changen=change.listen(source,timeout=60,phrase_time_limit=3)
             changename=change.recognize_google(changen,language='en-IND')
-            path=(r'F:\\All Python Codes With Django\My_Project\\Dynamo_Magic\\change_name.txt')
+            path=(r'your path') // where you want to store this data.
             file3 = open(path, 'w+')# it will open a path for us and write the change name what we have told to him.
             speak.speak('Now i will call you:- ' + changename)
             print(file3.write(changename))
@@ -157,7 +157,7 @@ elif('play music' in data or 'play music' in data or 'kuch gana' in data or 'Kuc
          with sr.Microphone() as source:
              audio2 = tet.listen(source, timeout=20, phrase_time_limit=5)
              data2 = tet.recognize_google(audio2, language='en-IND')
-             os.startfile(r'E:\Videos\\'+data2+'.mkv')
+             os.startfile(r'your music path'+data2+'."format like .mp4, mkv"')
              print('enjoy your music'+" "+data2)
              speak.speak('heres'+data2)
 
@@ -173,7 +173,7 @@ elif('play movie' in data or 'Movie' in data or 'movie' in data):
         with sr.Microphone() as source:
             audio2 = tet.listen(source, timeout=60, phrase_time_limit=3)
             data2 = tet.recognize_google(audio2, language='en-IND')
-            os.startfile(r'E:\\movies\\English Movies\\'+data2+'.mp4')
+            os.startfile(r'your path'+data2+'.mp4')
             print('enjoy your movie')
             speak.speak('enjoy!'+data2)
     elif('hindi movie' in movie or 'hindi' in movie or 'hindi movies' in movie):
@@ -183,7 +183,7 @@ elif('play movie' in data or 'Movie' in data or 'movie' in data):
         with sr.Microphone() as source:
             audio2 = tet.listen(source, timeout=60, phrase_time_limit=3)
             data2 = tet.recognize_google(audio2, language='en-IND')
-            os.startfile(r'E:\\movies\\Hindi movies\\'+data2+'.mkv')
+            os.startfile(r'your path'+data2+'.mkv')
             print('enjoy your movie')
             speak.speak('enjoy!'+movie)
     else:
@@ -192,7 +192,7 @@ elif('play movie' in data or 'Movie' in data or 'movie' in data):
         wb.open('https://www.youtube.com/results?search_query='+movie)
 
 elif('weather update'in data or 'todays forecast' in data or 'mausam' in data or 'Todays' in data or 'todays' in data):
-        url = 'http://api.openweathermap.org/data/2.5/weather?appid=3fbf6f8d2aa6d550a3fa1d19f5d9b0fd&q='
+        url = 'http://api.openweathermap.org/data/2.5/weather?appid=your-api-key='
         speak.speak('please enter a city')
         city=input('Enter the city:- ')
         print('you have enter'+" "+city)
@@ -200,7 +200,7 @@ elif('weather update'in data or 'todays forecast' in data or 'mausam' in data or
         weather=requests.get(fullurl).json()
         final_weather= weather['weather'][0]['description']
         degree = weather['main']['temp']
-        final_degree = int(degree-273.15)
+        final_degree = int(degree-273.15) // conversion of f to c
         cal_deg = str(final_degree)
         speak.speak('The weather in '+"  "+ city+" "+ 'is')
         speak.speak( cal_deg + 'degree celcius and its')
@@ -222,7 +222,7 @@ elif('add notes' in data or 'notes' in data or 'to do list' in data):
         speak.speak('Please give me the keyboard input!')
         data=input('type here yes or no:- ')
         if('yes' in data):
-            path = (r'F:\\All Python Codes With Django\\My_Project\\Dynamo_Magic\\notes.txt')  # here i have set a path in this path the value come and store.
+            path = (r'"your path"+"file name"')  # here i have set a path in this path the value come and store.
             speak.speak('now say what should i store')
             tet=sr.Recognizer()
             with sr.Microphone() as source:
@@ -234,7 +234,7 @@ elif('add notes' in data or 'notes' in data or 'to do list' in data):
                 print(data2)
                 speak.speak('ok! I have wrote this '+" "+ data2)
         else:
-            path = (r'F:\\All Python Codes With Django\\My_Project\\Dynamo_Magic\\notes.txt')  # here i have set a path in this path the value come and store.
+            path = (r'your path + file name')  # here i have set a path in this path the value come and store.
             file = open(path, 'w+')  # it will go on that location and write a file what we going to say
             data2=input('type here what you want to store:- '+"")
             print(file.write(data2))  # writr the things that we going to say
@@ -244,62 +244,12 @@ elif('add notes' in data or 'notes' in data or 'to do list' in data):
 elif('show my to do list' in data or 'show notes' in data or 'show note' in data ):
         print('collecting data! please wait')
         speak.speak('collecting data! please wait')
-        path=(r'F:\\All Python Codes With Django\\My_Project\\Dynamo_Magic\\notes.txt')
+        path=(r'your path + file name')
         file1=open(path,'r') # it will open a path for us
         speak.speak('this are your todo list')
         print(file1.read()) # it will read the text which is there in a file and print it on console
         #os.startfile(r'F:\\All Python Codes With Django\\My_Project\\Dynamo_Magic\\notes.txt') # it will open a notepad for us and the location is given where we have stored as txt file.
         file1.close()
-
-elif('show my mails' in data or 'open Gmail' in data or 'open my mails' in data):
-    speak.speak('here is your gmail')
-    wb.open('www.gmail.com')
-
-
-elif('Sudha' in data or 'George' in data or 'SUVS' in data or 'Friends' in data or 'friend' in data or 'sujata' in data or 'Sujata' in data):
-    print('Apki sab sisters meri bhua hai apke sab brother mere chacha hai')
-    speak.speak('your all sisters are mine buha!ji '
-                 '!!, and your all brothers are mine chacha!ji')
-    # speak.speak('sujata is my cachi!ji')
-
-elif('Papa' in data or 'Maa' in data or 'Mummy' in data or 'Mom' in data or 'papa' in data):
-    print('apake papa mere dadaji hai '
-          'and apki mom meri dadiji hai')
-    speak.speak('Your dad is my Dada!ji'
-                'and your mom is my Dadi!ji')
-
-elif('idea' in data or 'Idea' in data or 'got this' in data or 'Stuck with' in data or 'stuck with' in data or 'got an idea please' in data ):
-    print('what you want me to save?')
-    speak.speak('what you want me to save?')
-    print('would it be by voice! or! by keyboard!, if voice! then say voice! else say by keyboard!')
-    speak.speak('would it be by voice! or! by keyboard!, if voice! then say voice! else say keyboard!')
-    speak.speak('say now?')
-    tet = sr.Recognizer()
-    with sr.Microphone() as source:
-        audio2 = tet.listen(source, timeout=60, phrase_time_limit=5)
-        data2 = tet.recognize_google(audio2, language='en-IND')
-        condition=data2
-    if('Voice' in condition or 'voice' in condition):
-        path = (r'F:\\All Python Codes With Django\\My_Project\\Dynamo_Magic\\saved_content.txt')
-        speak.speak('ok you said'+condition)
-        speak.speak('now! say what you want me to save for you?')
-        tet = sr.Recognizer()
-        with sr.Microphone() as source:
-            audio2 = tet.listen(source, timeout=60, phrase_time_limit=5)
-            saved = tet.recognize_google(audio2, language='en-IND')
-            file4=open(path,'w+')
-            print(file4.write(saved))
-            speak.speak('Done! this is what i have listen'+saved)
-            print(saved)
-            file4.close()
-    else:
-        speak.speak('ok you said'+condition)
-        saved=input('enter what you want to save:- '+" ")
-        path = (r'F:\\All Python Codes With Django\\My_Project\\Dynamo_Magic\\saved_content.txt')
-        file4=open(path,'w+')
-        file4.write(saved)
-        print(saved)
-        file4.close()
 
 elif('shutdown pc' in data or 'Shutdown' in data or 'shutdown' in data or 'system list' in data):
     print('what type of input would be there a voice or keyboard')
@@ -371,7 +321,7 @@ elif('Train' in data or 'train' in data or 'train live status' in data):
     train_name=requests.get(url).json()
     desc=requests.get(url).json()
     des=desc['position']
-    final_status = status['current_station']['name']
+    final_status = status['current_station']['name'] // retreving data from APIs
     trainname=train_name ['train']['name']
     speak.speak("ok! you are enquiring of "+trainname)
     print(trainname)
